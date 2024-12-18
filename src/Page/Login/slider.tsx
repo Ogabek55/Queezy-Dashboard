@@ -1,90 +1,127 @@
 import React, { useState, useEffect } from "react";
+import BacroundImg1 from "./image/bacroundImg1.png";
+import BacroundImg2 from "./image/bacroundImg2.png";
+import BacroundImg3 from "./image/bacroundImg3.png";
+import { BorderAll } from "@mui/icons-material";
 
-type SliderProps = {
-  images: string[];
-};
+const slides = [
+  {
+    id: 1,
+    image: BacroundImg1,
+    text: ["Create gamified quizzes", "becomes simple"],
+  },
+  {
+    id: 2,
+    image: BacroundImg2,
+    text: ["Find Quizzes to test out", "your knowledge"],
+  },
+  {
+    id: 3,
+    image: BacroundImg3,
+    text: ["Take part in challenges", "with friends"],
+  },
+];
 
-const Slider: React.FC<SliderProps> = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const App: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 4000);
+    const interval = setInterval(handleNext, 3000);
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, []);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
   };
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  const renderDots = () => {
+    return slides.map((_, index) => (
+      <span
+        key={index}
+        onClick={() => handleDotClick(index)}
+        style={{
+          ...styles.dot,
+          width: currentIndex === index ? "12px" : "8px",
+          height: currentIndex === index ? "12px" : "8px",
+          backgroundColor: currentIndex === index ? "#ffffff" : "#888",
+          cursor: "pointer",
+        }}
+      />
+    ));
   };
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "680px",
-        height: "908px",
-        overflow: "hidden",
-      }}
-    >
-      {images.map((image, index) => (
+    <div style={styles.container}>
+      <div style={styles.slideContainer}>
         <img
-          key={index}
-          src={image}
-          alt={`Slide ${index + ""}`}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            transition: "opacity 0.5s ease-in-out",
-            opacity: index === currentIndex ? 1 : 0,
-            zIndex: index === currentIndex ? 1 : 0,
-          }}
+          src={slides[currentIndex].image}
+          alt={`Slide ${currentIndex + 1}`}
+          style={styles.image}
         />
-      ))}
-      <button
-        onClick={handlePrev}
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "10px",
-          transform: "translateY(-50%)",
-          zIndex: 2,
-          border: "none",
-          background: "transparent",
-          padding: "5px",
-        }}
-      >
-        ❮
-      </button>
-      <button
-        onClick={handleNext}
-        style={{
-          position: "absolute",
-          top: "50%",
-          right: "10px",
-          transform: "translateY(-50%)",
-          zIndex: 2,
-          border: "none",
-          background: "transparent",
-          padding: "5px",
-        }}
-      >
-        ❯
-      </button>
+        <div style={styles.text}>
+          <span style={styles.textLine}>{slides[currentIndex].text[0]}</span>
+          <span style={styles.textLine}>{slides[currentIndex].text[1]}</span>
+        </div>
+      </div>
+      <div style={styles.dotsContainer}>{renderDots()}</div>
     </div>
   );
 };
 
-export default Slider;
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column" as const,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(106, 90, 224, 1)",
+    color: "#fff",
+  },
+  slideContainer: {
+    display: "flex",
+    flexDirection: "column" as const,
+    alignItems: "center",
+    justifyContent: "center",
+    width: "680px",
+    height: "908px",
+    backgroundColor: "rgba(106, 90, 224, 1)",
+    borderRadius: "10px",
+    overflow: "hidden",
+  },
+  image: {
+    width: "100%",
+    height: "50%",
+    objectFit: "contain" as const,
+  },
+  text: {
+    width: "100%",
+    fontFamily: "Rubik",
+    fontSize: "20px",
+    color: "white",
+    padding: "10px",
+    fontWeight: "500",
+    textAlign: "center" as const,
+    lineHeight: "28px",
+    display: "flex",
+    flexDirection: "column" as const,
+    gap: "5px",
+  },
+  textLine: {
+    display: "block",
+  },
+  dotsContainer: {
+    display: "flex",
+    gap: "8px",
+    marginTop: "10px",
+  },
+  dot: {
+    borderRadius: "50%",
+    transition: "all 0.3s ease",
+  },
+};
+
+export default App;

@@ -160,9 +160,7 @@ const Login = () => {
               </div>
             </div>
             <div className="login_form_container_img">
-              <div style={{ textAlign: "center", marginTop: "40px" }}>
-                <Slider images={images} />
-              </div>
+              <Slider />
             </div>
           </div>
         </SignUp>
