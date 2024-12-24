@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import BacroundImg1 from "./image/bacroundImg1.png";
 import BacroundImg2 from "./image/bacroundImg2.png";
 import BacroundImg3 from "./image/bacroundImg3.png";
-import { BorderAll } from "@mui/icons-material";
+import { BorderAll, Padding } from "@mui/icons-material";
 
 const slides = [
   {
@@ -41,6 +41,7 @@ const App: React.FC = () => {
   const renderDots = () => {
     return slides.map((_, index) => (
       <span
+        className="renderDotsClass"
         key={index}
         onClick={() => handleDotClick(index)}
         style={{
@@ -74,11 +75,11 @@ const App: React.FC = () => {
 
 const styles = {
   container: {
+    width: "200px",
     display: "flex",
     flexDirection: "column" as const,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(106, 90, 224, 1)",
     color: "#fff",
   },
   slideContainer: {
@@ -96,6 +97,7 @@ const styles = {
     width: "100%",
     height: "50%",
     objectFit: "contain" as const,
+    marginTop: "-40px",
   },
   text: {
     width: "100%",
@@ -109,6 +111,7 @@ const styles = {
     display: "flex",
     flexDirection: "column" as const,
     gap: "5px",
+    marginTop: "40px",
   },
   textLine: {
     display: "block",
@@ -116,7 +119,7 @@ const styles = {
   dotsContainer: {
     display: "flex",
     gap: "8px",
-    marginTop: "10px",
+    marginTop: "-142px",
   },
   dot: {
     borderRadius: "50%",

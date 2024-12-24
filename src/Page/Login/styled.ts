@@ -131,9 +131,36 @@ export const PasswordForgotInformation = styled.div`
     font-weight: 900;
     line-height: 19.6px;
     text-align: center;
+
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 
     color: rgb(63, 60, 81);
   }
+`;
+export const BgImg = styled.div`
+  width: 200px;
+  position: relative;
+  bottom: 800px;
+  right: -150px;
+
+  .bgImg2 {
+    position: relative;
+    right: 500px;
+    bottom: 100px;
+    transform: rotate(180deg);
+  }
+  .bgImg2_2 {
+    position: relative;
+    bottom: 700px;
+    right: 270px;
+  }
+  .bgImg2_3 {
+    position: relative;
+    top: -250px;
+    right: 80px;
+  }
+`;
+export const BUttonWithGoogle = styled.div`
+  padding: 40px 0px 0px 0px;
 `;
