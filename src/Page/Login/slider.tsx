@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import BacroundImg1 from "./image/bacroundImg1.png";
 import BacroundImg2 from "./image/bacroundImg2.png";
 import BacroundImg3 from "./image/bacroundImg3.png";
-import { BorderAll, Padding } from "@mui/icons-material";
+
 
 const slides = [
   {
@@ -62,7 +62,7 @@ const App: React.FC = () => {
           src={slides[currentIndex].image}
           alt={`Slide ${currentIndex + 1}`}
           style={styles.image}
-        />
+        /> 
         <div style={styles.text}>
           <span style={styles.textLine}>{slides[currentIndex].text[0]}</span>
           <span style={styles.textLine}>{slides[currentIndex].text[1]}</span>
@@ -75,11 +75,9 @@ const App: React.FC = () => {
 
 const styles = {
   container: {
-    width: "200px",
     display: "flex",
     flexDirection: "column" as const,
     alignItems: "center",
-    justifyContent: "center",
     color: "#fff",
   },
   slideContainer: {

@@ -15,10 +15,7 @@ import Button from "@mui/material/Button";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
-import ContaineriMG1 from "./image/Container1.png";
-import ContaineriMG2 from "./image/Container2.png";
-import ContaineriMG3 from "./image/Container3.png";
-import Paper from "@mui/material/Paper";
+ import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import LockIcon from "@mui/icons-material/LockOutlined";
@@ -29,7 +26,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Slider from "./slider";
-const images = [ContaineriMG1, ContaineriMG2, ContaineriMG3];
+
 
 const Login = () => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -48,7 +45,6 @@ const Login = () => {
     event.preventDefault();
   };
   return (
-    <>
       <Container maxWidth="xl">
         <SignUp>
           {" "}
@@ -67,7 +63,7 @@ const Login = () => {
               </div>
               <Typography variant="h4">Login in to Quiezzy</Typography>
               <Typography variant="h5">
-                Don’t have account?{" "}
+               Don’t have account?{" "}
                 <a style={{ textDecoration: "none" }} href="#">
                   Register
                 </a>
@@ -107,6 +103,7 @@ const Login = () => {
                       height: 56,
                       borderRadius: "20px",
                       margin: "6px 0px 0px 0px",
+                      boxShadow:"0"
                     }}
                   >
                     <IconButton sx={{ p: "10px" }} aria-label="Email">
@@ -143,7 +140,7 @@ const Login = () => {
                     borderRadius: "20px",
                     background: "white",
                     border: "none",
-
+                                                                   
                     "& .MuiOutlinedInput-root": {
                       "&:hover .MuiOutlinedInput-notchedOutline": {
                         borderColor: "transparent",
@@ -213,18 +210,16 @@ const Login = () => {
               </div>
             </div>
             <div className="login_form_container_img">
-              <Slider />
               <BgImg>
-                <img src={NBacroundImg} alt="" />
-                <img className="bgImg2" src={NBacroundImg} alt="" />
+               <img className="bgImg2" src={NBacroundImg} alt="" />
                 <img className="bgImg2_2" src={NBacroundImg2} alt="" />
                 <img className="bgImg2_3" src={NBacroundImg3} alt="" />
               </BgImg>
             </div>
           </div>
+              <Slider />
         </SignUp>
       </Container>
-    </>
   );
 };
 

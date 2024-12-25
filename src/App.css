@@ -3,14 +3,14 @@ body {
   background-color: rgba(239, 238, 252, 1);
   margin: 0;
   padding: 0;
-  overflow: visible;
+  width: 100%;
+ 
 }
 .login_page_form_header {
-  width: 162.92px;
-  height: 56px;
+  gap: 16px;
   opacity: 0px;
   display: flex;
-  justify-content: space-between;
+  justify-content:start;
   align-items: center;
 }
 .form_input {

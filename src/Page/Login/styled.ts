@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 export const SignUp = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
   .login_page {
     display: flex;
     justify-content: space-around;
-    gap: 143px;
-  }
+   }
   h4 {
     font-family: "Rubik", sans-serif;
     font-size: 32px;
@@ -45,9 +47,6 @@ export const SignUp = styled.div`
     opacity: 0px;
     color: white;
     background: rgba(0, 86, 178, 1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-weight: bold;
   }
   .separator {
@@ -55,16 +54,13 @@ export const SignUp = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    width: 440px;
-    height: 24px;
     text-align: center;
     color: rgba(133, 132, 148, 1);
   }
 
   .separator::before,
   .separator::after {
-    content: "";
+   
     flex-grow: 1;
     height: 1px;
     background-color: rgba(204, 204, 204, 1);
@@ -72,7 +68,7 @@ export const SignUp = styled.div`
 
   .separator span {
     margin: 0 10px;
-    font-size: 14px;
+    font-size: 14px;            
     font-weight: bold;
   }
   .form_email {
@@ -82,8 +78,6 @@ export const SignUp = styled.div`
     font-weight: 500;
     line-height: 24px;
     text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
   }
 `;
 export const ButtonFooter = styled.div`
@@ -93,11 +87,12 @@ export const ButtonFooter = styled.div`
     border-radius: 20px;
     text-align: center;
     margin-top: 24px;
+    font-weight:500;
   }
 `;
 export const PasswordForgot = styled.div`
-  display: flex;
-  justify-content: center;
+     display: flex;
+     justify-content: center;
   h5 {
     font-family: "Rubik", sans-serif;
     font-weight: 500;
@@ -110,7 +105,6 @@ export const PasswordForgot = styled.div`
 `;
 export const PasswordForgotInformation = styled.div`
   width: 364px;
-  height: 48px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -131,10 +125,6 @@ export const PasswordForgotInformation = styled.div`
     font-weight: 900;
     line-height: 19.6px;
     text-align: center;
-
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-
     color: rgb(63, 60, 81);
   }
 `;
@@ -143,6 +133,14 @@ export const BgImg = styled.div`
   position: relative;
   bottom: 800px;
   right: -150px;
+  
+  .bgImg1 {
+    position: relative;
+    right: 500px;
+    bottom: 100px;
+    transform: rotate(180deg);
+    border: 3px solid red;
+   }
 
   .bgImg2 {
     position: relative;
