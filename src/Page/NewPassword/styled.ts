@@ -78,7 +78,7 @@ export const SignUp = styled.div`
     font-size: 14px;
     font-weight: bold;
   }
-  .form_email {
+  .form_password {
     padding: 24px 0px 0px 0px;
     font-family: "Rubik", sans-serif;
     font-size: 16px;
