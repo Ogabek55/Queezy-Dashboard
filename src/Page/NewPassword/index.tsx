@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Typography,
@@ -9,6 +9,8 @@ import {
   IconButton,
 } from "@mui/material";
 import LockIcon from "@mui/icons-material/LockOutlined";
+import DoneIcon from '@mui/icons-material/Done';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { ButtonFooter, SignUp } from "./styled";
@@ -17,6 +19,7 @@ import Slider from "./slider";
 import { useNavigate } from "react-router-dom";
 
 const ResetPassword = () => {
+
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -25,17 +28,29 @@ const ResetPassword = () => {
   const navigate = useNavigate();
 
   const handleClickShowPassword = () => setShowPassword((prev) => !prev);
-  const handleMouseDownPassword = (event) => event.preventDefault();
 
-  const handleLogin = () => {
-    if (password.length < 8) {
-      setErrorMessage("Password must be at least 8 characters.");
+  const handleMouseDownPassword = (event: any) => {
+    if (event) {
+      event.preventDefault();
+    }
+  };
+
+  useEffect(() => {
+    if (!password) {
+      setErrorMessage("Password cannot be empty.");
+    } else if (password.length < 8) {
+      setErrorMessage("Password must be at least 8 characters long.");
     } else if (password !== confirmPassword) {
       setErrorMessage("Passwords do not match.");
     } else {
       setErrorMessage("");
+    }
+  }, [password, confirmPassword]); 
+
+  const handleLogin = () => {
+    if (!errorMessage && password && password === confirmPassword) {
       console.log("Password reset successful!");
-      navigate("/next-page"); // Keyingi sahifaga o'tish
+      navigate("/next-page");
     }
   };
 
@@ -50,6 +65,7 @@ const ResetPassword = () => {
                 Queezy
               </Typography>
             </div>
+
             <Typography variant="h4" sx={{ marginBottom: "20px", fontWeight: "bold" }}>
               New Password
             </Typography>
@@ -88,7 +104,7 @@ const ResetPassword = () => {
                         onMouseDown={handleMouseDownPassword}
                         edge="end"
                       >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                        {showPassword ?  <Visibility /> : <VisibilityOff />}
                       </IconButton>
                     </InputAdornment>
                   }
@@ -96,12 +112,28 @@ const ResetPassword = () => {
                 />
               </FormControl>
 
+    
               {errorMessage && (
-                <Typography className="form_error" sx={{ color: "red", marginTop: "8px" }}>
-                  {errorMessage}
+                <Typography
+                  className="form_error"
+                  sx={{
+                    marginTop: "8px",
+                    fontSize: "14px",
+                    lineHeight: "19.6px",
+                    fontWeight: "400",
+                    color: "#858494",
+                  }}
+                >
+                  {errorMessage}{" "}
+                  {errorMessage.includes("match") ? (
+                    <span style={{ color: "green", float:"inline-end" }}><DoneIcon/></span>
+                  ) : (
+                    <span style={{ color: "red", float:"inline-end" }}><CloseRoundedIcon/></span>
+                  )}
                 </Typography>
               )}
 
+             
               <Typography className="form_password">Confirm Password</Typography>
               <FormControl
                 sx={{
@@ -132,7 +164,7 @@ const ResetPassword = () => {
                         onMouseDown={handleMouseDownPassword}
                         edge="end"
                       >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
                       </IconButton>
                     </InputAdornment>
                   }
@@ -141,7 +173,12 @@ const ResetPassword = () => {
               </FormControl>
 
               <ButtonFooter>
-                <Button variant="contained" onClick={handleLogin} sx={{ marginTop: "20px" }}>
+                <Button
+                  variant="contained"
+                  onClick={handleLogin}
+                  sx={{ marginTop: "20px" }}
+                  disabled={!!errorMessage}
+                >
                   Reset Password
                 </Button>
               </ButtonFooter>
