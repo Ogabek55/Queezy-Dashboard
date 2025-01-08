@@ -108,7 +108,6 @@ export const ButtonFooter = styled.div`
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    
   }
 `;
 export const PasswordForgot = styled.div`
@@ -125,7 +124,7 @@ export const PasswordForgot = styled.div`
   }
 `;
 export const PasswordForgotInformation = styled.div`
-  width: 364px;
+  width: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -140,6 +139,16 @@ export const PasswordForgotInformation = styled.div`
     text-align: center;
     color: rgba(133, 132, 148, 1);
   }
+  .text_footer {
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(133, 132, 148, 1);
+  }
   .text_footer_span {
     font-family: "Graphik";
     font-size: 14px;
@@ -149,29 +158,7 @@ export const PasswordForgotInformation = styled.div`
     color: rgb(63, 60, 81);
   }
 `;
-export const BgImg = styled.div`
-  width: 200px;
-  position: relative;
-  bottom: 800px;
-  right: -150px;
 
-  .bgImg2 {
-    position: relative;
-    right: 500px;
-    bottom: 100px;
-    transform: rotate(180deg);
-  }
-  .bgImg2_2 {
-    position: relative;
-    bottom: 700px;
-    right: 270px;
-  }
-  .bgImg2_3 {
-    position: relative;
-    top: -250px;
-    right: 80px;
-  }
-`;
 export const BUttonWithGoogle = styled.div`
   padding: 40px 0px 0px 0px;
 `;

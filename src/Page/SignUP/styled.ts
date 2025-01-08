@@ -78,7 +78,7 @@ export const SignUp = styled.div`
     font-size: 14px;
     font-weight: bold;
   }
-  .form_password {
+  .form_email {
     padding: 24px 0px 0px 0px;
     font-family: "Rubik", sans-serif;
     font-size: 16px;
@@ -98,7 +98,7 @@ export const ButtonFooter = styled.div`
     height: 56px;
     background: rgba(106, 90, 224, 1);
     color: white;
-
+    font-weight: bold;
     border-radius: 20px;
     font-family: "Rubik";
     font-size: 16px;
@@ -107,9 +107,70 @@ export const ButtonFooter = styled.div`
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    
+  }
+`;
+export const PasswordForgot = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  h4 {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24s;
+    text-align: center;
+    padding: 24px 0px 0px 0px;
+    gap: 20px;
+    color: #858494;
+  }
+  span {
+    color: #6a5ae0;
+    cursor: pointer;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+`;
+export const PasswordForgotInformation = styled.div`
+  width:100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 0px 0px 0px;
+  h4 {
+    display: flex;
+    justify-content: center;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(133, 132, 148, 1);
+  }
+  .text_footer {
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(133, 132, 148, 1);
+  }
+  .text_footer_span {
+    font-family: "Graphik";
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 19.6px;
+    text-align: center;
+    color: rgb(63, 60, 81);
   }
 `;
 
-
-
+export const BUttonWithGoogle = styled.div`
+  padding: 40px 0px 0px 0px;
+`;

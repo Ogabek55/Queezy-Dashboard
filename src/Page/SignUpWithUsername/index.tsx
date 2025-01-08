@@ -9,51 +9,64 @@ import {
 } from "@mui/material";
 import { ButtonFooter, SignUp } from "./styled";
 import Imagequeezy from "./image/image-queezy.png";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import Slider from "./slider";
-import { useNavigate } from "react-router-dom";
+import { LinearProgress, Box } from "@mui/material";
 
 const Fpassword = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [progress, setProgress] = useState(100);
 
-  const navigate = useNavigate();
-
-  const handleResetPassword = () => {
-    if (!email.trim()) {
-      setErrorMessage("Email address is required.");
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      setErrorMessage("Please enter a valid email address.");
-    } else {
-      setErrorMessage("");
-      navigate("/new-password");
-    }
-  };
 
   return (
     <Container maxWidth="xl">
       <SignUp>
         <div className="login_page">
           <div className="login_page_form">
-            <div
-              style={{ marginTop: "80px" }}
-              className="login_page_form_header"
-            >
+            <div style={{ marginTop: "80px" }} className="login_page_form_header">
               <img src={Imagequeezy} alt="Queezy Logo" />
-              <Typography
-                sx={{ color: "rgba(12, 9, 42, 1)", fontWeight: "bold" }}
-              >
+              <Typography sx={{ color: "rgba(12, 9, 42, 1)", fontWeight: "bold" }}>
                 Queezy
               </Typography>
             </div>
-            <Typography variant="h4">Reset Password</Typography>
+            <Typography variant="h4">Create a username</Typography>
             <Typography variant="h5">
-              Enter your email and we will send you a link to reset <br /> your
-              password.
+              Fill in all the data and proceed to the next step
             </Typography>
 
+            <Box sx={{ width: '100%', position: 'relative', marginTop: '24px' }}>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{
+                  position: 'absolute',
+                  right: 0,
+                  top: -25,
+                  fontSize: '14px',
+                  fontWeight: 'bold',
+                  color: '#6A5AE0',
+                }}
+              >
+                {`3 of 3`} 
+              </Typography>
+              <LinearProgress
+                variant="determinate"
+                value={progress}
+                sx={{
+                  height: 10,
+                  borderRadius: 5,
+                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                  width: '100%',
+                  '& .MuiLinearProgress-bar': {
+                    backgroundColor: '#6A5AE0',
+                  },
+                }}
+              />
+            </Box>
+
             <div>
-              <Typography className="form_email">Email Address</Typography>
+              <Typography className="form_email">Username</Typography>
               <Paper
                 component="form"
                 sx={{
@@ -66,8 +79,8 @@ const Fpassword = () => {
                   boxShadow: "0",
                 }}
               >
-                <IconButton sx={{ p: "10px" }} aria-label="Email">
-                  <MailOutlineIcon
+                <IconButton sx={{ p: "10px" }} aria-label="Username">
+                  <PersonOutlineIcon
                     sx={{
                       color: "rgba(106, 90, 224, 1)",
                     }}
@@ -75,10 +88,10 @@ const Fpassword = () => {
                 </IconButton>
                 <InputBase
                   sx={{ ml: 1, flex: 1 }}
-                  placeholder="Email Address"
-                  inputProps={{ "aria-label": "Email Address" }}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your username"
+                  inputProps={{ "aria-label": "Your username" }}
+                  value={username} 
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </Paper>
 
@@ -100,9 +113,9 @@ const Fpassword = () => {
                   className="ButtonFooter"
                   variant="contained"
                   disableElevation
-                  onClick={handleResetPassword}
+               
                 >
-                  Reset Password
+                  Complete Account
                 </Button>
               </ButtonFooter>
             </div>

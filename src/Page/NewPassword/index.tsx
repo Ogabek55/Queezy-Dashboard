@@ -50,7 +50,7 @@ const ResetPassword = () => {
   const handleLogin = () => {
     if (!errorMessage && password && password === confirmPassword) {
       console.log("Password reset successful!");
-      navigate("/next-page");
+      navigate("/sign-up");
     }
   };
 
@@ -88,7 +88,7 @@ const ResetPassword = () => {
                   type={showPassword ? "text" : "password"}
                   placeholder="Your password"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value.trim())}
                   startAdornment={
                     <InputAdornment position="start">
                       <IconButton edge="start" disableRipple>
@@ -112,7 +112,6 @@ const ResetPassword = () => {
                 />
               </FormControl>
 
-    
               {errorMessage && (
                 <Typography
                   className="form_error"
@@ -133,7 +132,6 @@ const ResetPassword = () => {
                 </Typography>
               )}
 
-             
               <Typography className="form_password">Confirm Password</Typography>
               <FormControl
                 sx={{
@@ -148,7 +146,7 @@ const ResetPassword = () => {
                   type={showPassword ? "text" : "password"}
                   placeholder="Confirm your password"
                   value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  onChange={(e) => setConfirmPassword(e.target.value.trim())} 
                   startAdornment={
                     <InputAdornment position="start">
                       <IconButton edge="start" disableRipple>
