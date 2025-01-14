@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import BacroundImg1 from "./image/bacroundImg1.png";
 import BacroundImg2 from "./image/bacroundImg2.png";
 import BacroundImg3 from "./image/bacroundImg3.png";
-import { BorderAll, Padding } from "@mui/icons-material";
+
 
 const slides = [
   {

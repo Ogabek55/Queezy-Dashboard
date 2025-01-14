@@ -88,6 +88,10 @@ export const SignUp = styled.div`
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
   }
+  @media screen and (max-width: 1282px) {
+    display: block;
+    gap: 50px;
+  }
 `;
 export const ButtonFooter = styled.div`
   width: 440px;
@@ -161,4 +165,18 @@ export const PasswordForgotInformation = styled.div`
 
 export const BUttonWithGoogle = styled.div`
   padding: 40px 0px 0px 0px;
+`;
+export const MediaQuery = styled.div`
+  @media screen and (max-width: 1282px) {
+    width: 100%;
+    display: block;
+    gap: 50px;
+    margin-top: 50px;
+  }
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    .slideContainer {
+      width: 100%;
+    }
+  }
 `;

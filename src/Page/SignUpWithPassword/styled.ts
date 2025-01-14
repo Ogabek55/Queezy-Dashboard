@@ -37,6 +37,10 @@ export const SignUp = styled.div`
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
   }
+  @media screen and (max-width: 1282px) {
+    display: block;
+    gap: 50px;
+  }
 `;
 
 export const ButtonFooter = styled.div`

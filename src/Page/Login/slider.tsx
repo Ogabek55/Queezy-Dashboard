@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import BacroundImg1 from "./image/bacroundImg1.png";
 import BacroundImg2 from "./image/bacroundImg2.png";
 import BacroundImg3 from "./image/bacroundImg3.png";
-import { BorderAll, Padding } from "@mui/icons-material";
+import { MediaQuery } from "./styled";
+
 
 const slides = [
   {
@@ -56,8 +57,9 @@ const App: React.FC = () => {
   };
 
   return (
+    <MediaQuery>
     <div style={styles.container}>
-      <div style={styles.slideContainer}>
+      <div style={styles.slideContainer} className="slideContainerClass">
         <img
           src={slides[currentIndex].image}
           alt={`Slide ${currentIndex + 1}`}
@@ -69,7 +71,7 @@ const App: React.FC = () => {
         </div>
       </div>
       <div style={styles.dotsContainer}>{renderDots()}</div>
-    </div>
+    </div></MediaQuery>
   );
 };
 

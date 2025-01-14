@@ -17,6 +17,7 @@ import { ButtonFooter, SignUp } from "./styled";
 import Imagequeezy from "./image/image-queezy.png";
 import Slider from "./slider";
 import { useNavigate } from "react-router-dom";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 const ResetPassword = () => {
 
@@ -81,6 +82,7 @@ const ResetPassword = () => {
                   width: "440px",
                   borderRadius: "20px",
                   background: "white",
+                  border: "2px solid #6A5AE0",
                 }}
                 variant="outlined"
               >
@@ -108,7 +110,9 @@ const ResetPassword = () => {
                       </IconButton>
                     </InputAdornment>
                   }
-                  sx={{ "& .MuiOutlinedInput-notchedOutline": { border: "none" } }}
+                  sx={{ "& .MuiOutlinedInput-notchedOutline": { border: "none" } 
+                  
+                }}
                 />
               </FormControl>
 
@@ -121,6 +125,7 @@ const ResetPassword = () => {
                     lineHeight: "19.6px",
                     fontWeight: "400",
                     color: "#858494",
+                    
                   }}
                 >
                   {errorMessage}{" "}
@@ -139,6 +144,7 @@ const ResetPassword = () => {
                   width: "440px",
                   borderRadius: "20px",
                   background: "white",
+                  border: "2px solid #6A5AE0",
                 }}
                 variant="outlined"
               >

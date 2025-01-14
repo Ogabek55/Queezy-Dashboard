@@ -15,12 +15,11 @@ import { LinearProgress, Box } from "@mui/material";
 
 const Fpassword = () => {
   const [username, setUsername] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [progress, setProgress] = useState(100);
-
+  const [errorMessage] = useState("");
+  const [progress] = useState(100);
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
       <SignUp>
         <div className="login_page">
           <div className="login_page_form">
@@ -77,6 +76,7 @@ const Fpassword = () => {
                   borderRadius: "20px",
                   margin: "6px 0px 0px 0px",
                   boxShadow: "0",
+                  border: "2px solid #6A5AE0",
                 }}
               >
                 <IconButton sx={{ p: "10px" }} aria-label="Username">

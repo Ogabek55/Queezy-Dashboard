@@ -20,7 +20,7 @@ import { LinearProgress } from "@mui/material";
 const Fpassword = () => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [progress, setProgress] = useState(66);
+  const [progress] = useState(66);
 
   const navigate = useNavigate();
 
@@ -112,6 +112,7 @@ const Fpassword = () => {
                   borderRadius: "20px",
                   margin: "6px 0px 0px 0px",
                   boxShadow: "0",
+                  border: "2px solid #6A5AE0",
                 }}
               >
                 <IconButton sx={{ p: "10px" }} aria-label="Password">

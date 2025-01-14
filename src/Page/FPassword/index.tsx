@@ -64,6 +64,8 @@ const Fpassword = () => {
                   borderRadius: "20px",
                   margin: "6px 0px 0px 0px",
                   boxShadow: "0",
+                  border: "2px solid #6A5AE0",
+                  
                 }}
               >
                 <IconButton sx={{ p: "10px" }} aria-label="Email">

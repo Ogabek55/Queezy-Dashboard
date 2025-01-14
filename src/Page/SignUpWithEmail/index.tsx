@@ -17,7 +17,7 @@ import { LinearProgress, Box } from "@mui/material";
 const Fpassword = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [progress, setProgress] = useState(33);
+  const [progress] = useState(33);
 
   const navigate = useNavigate();
 
@@ -92,6 +92,7 @@ const Fpassword = () => {
                   borderRadius: "20px",
                   margin: "6px 0px 0px 0px",
                   boxShadow: "0",
+                  border: "2px solid #6A5AE0",
                 }}
               >
                 <IconButton sx={{ p: "10px" }} aria-label="Email">
@@ -102,7 +103,7 @@ const Fpassword = () => {
                   />
                 </IconButton>
                 <InputBase
-                  sx={{ ml: 1, flex: 1 }}
+                  sx={{ ml: 1, flex: 1,  }}
                   placeholder="Your email adress"
                   inputProps={{ "aria-label": "Your email adress" }}
                   value={email}
