@@ -7,7 +7,7 @@ import {
   SignUp,
 } from "./styled";
 import Imagequeezy from "./image/image-queezy.png";
-import { Container, Typography, Link, useMediaQuery } from "@mui/material";
+import { Container, Typography, Link } from "@mui/material";
 import Facabook from "./image/facebookImg.png";
 import GoogleImg from "./image/googleImg.png";
 import Button from "@mui/material/Button";
@@ -59,7 +59,8 @@ const Login = () => {
   };
 
   return (
-    <Container maxWidth="xl">
+    
+    <Container maxWidth="xl"> 
       <SignUp>
         <div className="login_page">
           <div className="login_page_form">
