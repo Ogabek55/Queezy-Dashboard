@@ -125,7 +125,7 @@ const Login = () => {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  width: 440,
+                 
                   height: 56,
                   borderRadius: "20px",
                   margin: "6px 0px 0px 0px",
@@ -156,7 +156,7 @@ const Login = () => {
               <FormControl
                 sx={{
                   margin: "6px 0px 0px 0px",
-                  width: "440px",
+                 width: "100%", 
                   height: "56px",
                   borderRadius: "20px",
                   background: "white",

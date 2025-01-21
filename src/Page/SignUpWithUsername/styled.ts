@@ -37,11 +37,27 @@ export const SignUp = styled.div`
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
   }
+  .login_page_form{
+    width: 440px;
+  }
+  @media screen and (max-width:479px) {
+   .login_page_form, .login_page_form_buttons, .login_page{
+    width: 100%;
+     }
+    .login_page{
+      width: 100%;
+      
+    }
+  }
+  @media screen and (max-width: 1290px) {
+    display: block;
+    gap: 50px;
+  }
 `;
 
 export const ButtonFooter = styled.div`
   .ButtonFooter {
-    width: 440px;
+    width: 100%;
     height: 56px;
     border-radius: 20px;
     text-align: center;

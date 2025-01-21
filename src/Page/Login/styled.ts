@@ -6,8 +6,13 @@ export const SignUp = styled.div`
   justify-content: center;
   gap: 143px;
   .login_page {
+    width: 100%;
     display: flex;
     justify-content: space-around;
+  }
+  .login_page_form{
+    width: 100%;
+    max-width: 440px;
   }
   h4 {
     font-family: "Rubik", sans-serif;
@@ -26,7 +31,7 @@ export const SignUp = styled.div`
   }
   .firthbutton {
     text-align: center;
-    width: 440px;
+    width:100%;
     height: 56px;
     gap: 16px;
     border-radius: 20px;
@@ -42,7 +47,7 @@ export const SignUp = styled.div`
   }
   .secondbutton {
     text-align: center;
-    width: 440px;
+    width:100%;
     height: 56px;
     gap: 16px;
     border-radius: 20px;
@@ -89,11 +94,13 @@ export const SignUp = styled.div`
     text-decoration-skip-ink: none;
   }
   @media screen and (max-width:479px) {
-   .login_page_form, .login_page_form_buttons{
+   .login_page_form, .login_page_form_buttons, .login_page{
     width: 100%;
-    
-    
-   }
+     }
+    .login_page{
+      width: 100%;
+      
+    }
   }
   @media screen and (max-width: 1290px) {
     display: block;
@@ -101,7 +108,7 @@ export const SignUp = styled.div`
   }
 `;
 export const ButtonFooter = styled.div`
-  width: 440px;
+  width: 100%;
   border-radius: 20px;
   text-align: center;
   margin-top: 24px;

@@ -79,7 +79,7 @@ const ResetPassword = () => {
               <FormControl
                 sx={{
                   margin: "6px 0px 0px 0px",
-                  width: "440px",
+                  width: "100%",
                   borderRadius: "20px",
                   background: "white",
                   border: "2px solid #6A5AE0",
@@ -141,7 +141,7 @@ const ResetPassword = () => {
               <FormControl
                 sx={{
                   margin: "6px 0px 0px 0px",
-                  width: "440px",
+                  width: "100%",
                   borderRadius: "20px",
                   background: "white",
                   border: "2px solid #6A5AE0",

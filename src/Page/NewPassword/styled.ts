@@ -26,7 +26,7 @@ export const SignUp = styled.div`
   }
   .firthbutton {
     text-align: center;
-    width: 440px;
+    width:100%;
     height: 56px;
     gap: 16px;
     border-radius: 20px;
@@ -42,7 +42,7 @@ export const SignUp = styled.div`
   }
   .secondbutton {
     text-align: center;
-    width: 440px;
+    width:100%;
     height: 56px;
     gap: 16px;
     border-radius: 20px;
@@ -88,7 +88,19 @@ export const SignUp = styled.div`
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
   }
-  @media screen and (max-width: 1282px) {
+  .login_page_form{
+    width: 440px;
+  }
+  @media screen and (max-width:479px) {
+   .login_page_form, .login_page_form_buttons, .login_page{
+    width: 100%;
+     }
+    .login_page{
+      width: 100%;
+      
+    }
+  }
+  @media screen and (max-width: 1290px) {
     display: block;
     gap: 50px;
   }
@@ -102,7 +114,6 @@ export const ButtonFooter = styled.div`
     height: 56px;
     background: rgba(106, 90, 224, 1);
     color: white;
-
     border-radius: 20px;
     font-family: "Rubik";
     font-size: 16px;

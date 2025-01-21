@@ -59,7 +59,6 @@ const Fpassword = () => {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  width: 440,
                   height: 56,
                   borderRadius: "20px",
                   margin: "6px 0px 0px 0px",
