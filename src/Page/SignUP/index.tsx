@@ -15,7 +15,7 @@ import MarkunreadOutlinedIcon from "@mui/icons-material/MarkunreadOutlined";
 import Slider from "./slider";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const SignUpp = () => {
   const navigate = useNavigate();
 
   const handleResetPassword = () => {
@@ -106,4 +106,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUpp;

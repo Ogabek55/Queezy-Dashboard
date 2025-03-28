@@ -13,7 +13,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import Slider from "./slider";
 import { LinearProgress, Box } from "@mui/material";
 
-const Fpassword = () => {
+const SignUpWithUsername = () => {
   const [username, setUsername] = useState("");
   const [errorMessage] = useState("");
   const [progress] = useState(100);
@@ -127,4 +127,4 @@ const Fpassword = () => {
   );
 };
 
-export default Fpassword;
+export default SignUpWithUsername;

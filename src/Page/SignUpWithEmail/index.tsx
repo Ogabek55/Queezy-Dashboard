@@ -14,7 +14,7 @@ import Slider from "./slider";
 import { useNavigate } from "react-router-dom";
 import { LinearProgress, Box } from "@mui/material";
 
-const Fpassword = () => {
+const SignUpWithEmail = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [progress] = useState(33);
@@ -144,4 +144,4 @@ const Fpassword = () => {
   );
 };
 
-export default Fpassword;
+export default SignUpWithEmail;

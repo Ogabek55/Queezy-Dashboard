@@ -17,7 +17,7 @@ import Slider from "./slider";
 import { useNavigate } from "react-router-dom";
 import { LinearProgress } from "@mui/material";
 
-const Fpassword = () => {
+const SignUpWithPAssword = () => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [progress] = useState(66);
@@ -178,4 +178,4 @@ const Fpassword = () => {
   );
 };
 
-export default Fpassword;
+export default SignUpWithPAssword;
